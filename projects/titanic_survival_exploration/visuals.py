@@ -123,6 +123,8 @@ def survival_stats(data, outcomes, key, filters = []):
             values = ['C', 'Q', 'S']
         if(key == 'Sex'):
             values = ['male', 'female']
+        if(key == 'Cabin1'): 
+            values = [True, False]
 
         # Create DataFrame containing categories and count of each
         frame = pd.DataFrame(index = np.arange(len(values)), columns=(key,'Survived','NSurvived'))
