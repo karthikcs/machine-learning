@@ -13314,10 +13314,8 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> <br></p>
-<p>In a good fit, the distance between predicted Y and regression line is very near. This will be true for all the predicted values of Y. If the distance is reduced, the square of the distance is also very less. Which turns makes Mean Squared Error of our model very negligible. In the bad model, as the distance from the line increases the MSE also increases.</p>
-<p>As per the definition R^2 score (Coeffient of determination) is 1 MINUS the Ratio of Mean Squared error of regression line of the model to the Mean Squared Error of simple model. In this case Simple model is the horizontal line. The error of the simple model is mostly very high. If our model is not so good, the MSE is almost same as simple model which makes the R^2 score ZERO. If our model very good fit, the MSE of our model is very less and hence the Ratio of 2 models is negligible which makes the R^2 score equal to 1.</p>
-<p>The above R^2 score is 0.92 which is closer to 1. That means 92% of variance in y is predictable. <br>
+<p><strong>Answer:</strong> <br>
+The above R^2 score is 0.92 which is closer to 1. That means 92% of variance in y is predictable. <br>
 As per this analysis, this model <strong>have successfully</strong> captured the variation of target variable. It is a good model</p>
 
 </div>
@@ -14910,14 +14908,14 @@ Grid search is the method used to compare the goodness of the different models b
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> <br></p>
 <ul>
-<li>When we build a ML model, we need a portion of data (about 80%) for training and another portion of data (about 20%) for testing purpose. As a rule, we don't use testing set for training. To get better model, we need to cross validate the model.  <strong>k-fold</strong> cross validation allows us to do so. This technique also helps avoiding Over and Underfitting situations. The technique is explained below<br><ul>
-<li>Train data is split into <strong>k</strong> number of buckets (subsets).</li>
-<li>Model is trained <strong>k</strong> number of times, using k-1 no. of subsets as training set, and keeping 1 subset for cross validatation. In each iteraton, different bucket is selected fot cross validation. </li>
+<li>When we build a ML model, we need a portion of data (about 80%) for training and another portion of data (about 20%) for testing purpose. As a rule, we don't use testing set for training. So, we might losing some important feature information which might there in testing set and missing in training set. To avoid this issue we perform k-fold cross validation. <br><ul>
+<li>Entire data is split into <strong>k</strong> number of buckets.</li>
+<li>Model is trained <strong>k</strong> number of times, each time considering one bucket as cross validation dataset. </li>
 <li>Cross validation set is used for evaluating the model each time </li>
-<li>The result is calculated as average score of each evaluation. </li>
+<li>The result is calculated as average score of each evaluation.  </li>
 </ul>
 </li>
-<li>Major drawback of <em>Grid Search</em> is the testing dataset is also used for training and evaluating purpose. Which is a <strong>No-No</strong>. That will break the <em>Golden Rule</em> which suggests not to use testing data for training. To avoid this issue, Cross Validation technique is used with Grid Search. Where in testing data set is not touched until the end. For <em>Grid Search</em> CV data will be used for validation</li>
+<li>Major drawback of <em>Grid Search</em> is the testing dataset is also used for training and evaluating purpose. Which is a <strong>No-No</strong>. That will break the <em>Golden Rule</em> which suggests not to use testing data for training. To avoid this issue, Cross Validation technique is used. Where in testing data set is not touched until the end. For <em>Grid Search</em> CV data will be used for validation</li>
 </ul>
 
 </div>
@@ -15949,9 +15947,7 @@ Range in prices: $69,044.61
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> <br> 
-As we know this data has been collected in 1978, we can not definitely use the model as is for current real world. If we have to use this, we need to include inflation parameter for sure. More over, in this data, we have seen only few features for describing the houses. Most important feature like size of the house, type of house, no. of bath rooms, furnishing information are missing. This will not be sufficient for predicting in real world scenario. Based on the above Sensitivity analysis, we can see the model is not robust enough as the price is hovering about 17% of from mean predicted prices. Data collected for Boston having different impact on price. So will not be appplicable for Rural cities. Price of an home depends on both neighborhood as well as individual features. The combination decides the price, so we need more features and data to make the model more robust</p>
-<blockquote><p>By seeing all the above points, this model <strong>CAN NOT</strong> be used as it is for the real world.</p>
-</blockquote>
+As we know this data has been collected in 1978, we can not definitely use the model as is for current real world. If we have to use this, we need to include inflation parameter for sure. More over, in this data, we have seen only few features for describing the houses. Most important feature like size of the house, type of house, no. of bath rooms, furnishing information are missing. This will not sufficient for predicting in real world scenario. Based on the above Sesitivity analysis, we can see the model is not robust enough as the price is hovering about 17% of from mean predicted prices. Data collected for Boston having different impact on price. So will not be appplicable for Rural cities. Price of an home depends on both neighborhood as well as individual features. The combination decides the price, so we need more features and data to make the model more robust</p>
 
 </div>
 </div>
